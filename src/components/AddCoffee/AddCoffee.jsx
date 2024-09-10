@@ -1,11 +1,113 @@
-
-
 const AddCoffee = () => {
-    return (
-        <div>
-            <h2 className="text-2xl text-center">Add a Coffee</h2>
+  const handleAddCoffee = (e) => {
+    e.preventDefault();
+    const form = e.target.form;
+    const name = form.name.value;
+    const chef = form.chef.value;
+    const supplier = form.supplier.value;
+    const taste = form.taste.value;
+    const details = form.details.value;
+    const category = form.category.value;
+    const photoURL = form.url.value;
+    const items = { name, chef, supplier, taste, details, category, photoURL };
+    console.log(items);
+  };
+
+  return (
+    <div className="bg-[#F4F3F0] my-20 py-20 max-w-6xl mx-auto space-y-5">
+      <h2 className="text-center text-rancho text-4xl">Add New Coffee</h2>
+      <p className="text-center text-raleway px-10 md:px-44">
+        It is a long established fact that a reader will be distraceted by the
+        readable content of a page when looking at its layout. The point of
+        using Lorem Ipsum is that it has a more-or-less normal distribution of
+        letters, as opposed to using Content here.
+      </p>
+      <form
+        onClick={handleAddCoffee}
+        className="mx-10 md:mx-28 text-raleway space-y-4 md:space-y-7"
+      >
+        <div className="md:flex justify-between space-y-2 md:space-y-0">
+          <div className="space-y-1">
+            <h2 className="font-semibold">Name</h2>
+            <input
+              className=" pl-3 w-full md:pr-64 py-2 text-sm"
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter Coffee Name"
+            />
+          </div>
+          <div className=" space-y-2 md:space-y-1">
+            <h2 className="font-semibold">Chef</h2>
+            <input
+              className=" pl-3 w-full md:pr-64 py-2 text-sm"
+              type="text"
+              name="chef"
+              id="chef"
+              placeholder="Enter Chef Name"
+            />
+          </div>
         </div>
-    );
+        <div className="md:flex justify-between space-y-2 md:space-y-0">
+          <div className="space-y-1">
+            <h2 className="font-semibold">Supplier</h2>
+            <input
+              className=" pl-3 w-full md:pr-64 py-2 text-sm"
+              type="text"
+              name="supplier"
+              id="supplier"
+              placeholder="Enter Coffee Supplier"
+            />
+          </div>
+          <div className="space-y-1">
+            <h2 className="font-semibold">Taste</h2>
+            <input
+              className=" pl-3 w-full md:pr-64 py-2 text-sm"
+              type="text"
+              name="taste"
+              id="taste"
+              placeholder="Enter Coffee Taste"
+            />
+          </div>
+        </div>
+        <div className="md:flex justify-between space-y-2 md:space-y-0">
+          <div className="space-y-1">
+            <h2 className="font-semibold">Category</h2>
+            <input
+              className=" pl-3 w-full md:pr-64 py-2 text-sm"
+              type="text"
+              name="category"
+              id="category"
+              placeholder="Enter Coffee Category"
+            />
+          </div>
+          <div className="space-y-1">
+            <h2 className="font-semibold">Details</h2>
+            <input
+              className=" pl-3 w-full md:pr-64 py-2 text-sm"
+              type="text"
+              name="details"
+              id="details"
+              placeholder="Enter Coffee Details"
+            />
+          </div>
+        </div>
+        <div className="space-y-1">
+          <h2 className="font-semibold">Photo</h2>
+          <input
+            className=" w-full pl-3 py-2 text-sm"
+            type="url"
+            name="url"
+            id="url"
+            placeholder="Enter photo URL"
+          />
+        </div>
+        <div className="border px-3 py-1 bg-[#E3B577] hover:text-black text-rancho text-lg text-center">
+          <input type="submit" value="Add Coffee" />
+        </div>
+      </form>
+    </div>
+  );
 };
 
 export default AddCoffee;

@@ -6,6 +6,7 @@ import Home from "./components/Home/Home.jsx";
 import UpdateCoffee from "./components/UpdateCoffee/UpdateCoffee.jsx";
 import AddCoffee from "./components/AddCoffee/AddCoffee.jsx";
 import Root from "./Root/Root.jsx";
+import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "*",
+        element: <ErrorPage></ErrorPage>,
       },
       {
         path: "/updateCoffee",
