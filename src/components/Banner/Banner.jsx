@@ -26,6 +26,41 @@ const Banner = () => {
           </div>
         </div>
       </div>
+      <div className="bg-[#ECEAE3] py-9 md:px-72">
+        <div className="pl-5 md:pl-0 md:flex items-center justify-around">
+          <div className="space-y-2">
+            <img src="../../../public/images/icons/1.png" alt="" />
+            <h2 className="text-rancho text-3xl">Awesome Aroma</h2>
+            <p className="text-raleway">
+              You will definitely be a fan of the design <br /> & aroma of your
+              coffee
+            </p>
+          </div>
+          <div className="space-y-2">
+            <img src="../../../public/images/icons/2.png" alt="" />
+            <h2 className="text-rancho text-3xl">High Quality</h2>
+            <p className="text-raleway">
+              We served the coffee to you maintaining <br /> the best quality
+            </p>
+          </div>
+          <div className="space-y-2">
+            <img src="../../../public/images/icons/3.png" alt="" />
+            <h2 className="text-rancho text-3xl">Pure Grades</h2>
+            <p className="text-raleway">
+              The coffee is made of the green coffee beans <br /> which you will
+              love
+            </p>
+          </div>
+          <div className="space-y-2">
+            <img src="../../../public/images/icons/4.png" alt="" />
+            <h2 className="text-rancho text-3xl">Proper Roasting</h2>
+            <p className="text-raleway">
+              Your coffee is brewed by first roasting <br /> the green coffee
+              beans
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
