@@ -4,7 +4,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 const AddCoffee = () => {
   const handleAddCoffee = (e) => {
     e.preventDefault();
-    const form = e.target.form;
+    const form = e.target;
     const name = form.name.value;
     const chef = form.chef.value;
     const supplier = form.supplier.value;
@@ -12,8 +12,29 @@ const AddCoffee = () => {
     const details = form.details.value;
     const category = form.category.value;
     const photoURL = form.url.value;
-    const items = { name, chef, supplier, taste, details, category, photoURL };
-    console.log(items);
+    const newCoffee = {
+      name,
+      chef,
+      supplier,
+      taste,
+      details,
+      category,
+      photoURL,
+    };
+    console.log(newCoffee);
+
+    // send data to the server
+    fetch("http://localhost:5005/coffee", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newCoffee),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
   };
 
   return (
@@ -35,7 +56,7 @@ const AddCoffee = () => {
           letters, as opposed to using Content here.
         </p>
         <form
-          onClick={handleAddCoffee}
+          onSubmit={handleAddCoffee}
           className="mx-10 md:mx-28 text-raleway space-y-4 md:space-y-7"
         >
           <div className="md:flex justify-between space-y-2 md:space-y-0">

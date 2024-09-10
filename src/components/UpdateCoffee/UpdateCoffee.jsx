@@ -4,7 +4,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 const UpdateCoffee = () => {
   const handleUpdateCoffee = (e) => {
     e.preventDefault();
-    const form = e.target.form;
+    const form = e.target;
     const name = form.name.value;
     const chef = form.chef.value;
     const supplier = form.supplier.value;
@@ -44,7 +44,7 @@ const UpdateCoffee = () => {
           letters, as opposed to using Content here.
         </p>
         <form
-          onClick={handleUpdateCoffee}
+          onSubmit={handleUpdateCoffee}
           className="mx-10 md:mx-28 text-raleway space-y-4 md:space-y-7"
         >
           <div className="md:flex justify-between space-y-2 md:space-y-0">
