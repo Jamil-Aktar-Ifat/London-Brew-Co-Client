@@ -1,7 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import Swal from "sweetalert2";
 
 const UpdateCoffee = () => {
+  const coffee = useLoaderData();
+  const { _id, name, chef, supplier, taste, details, category, photoURL } =
+    coffee;
+  console.log(coffee);
   const handleUpdateCoffee = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -12,7 +17,9 @@ const UpdateCoffee = () => {
     const details = form.details.value;
     const category = form.category.value;
     const photoURL = form.url.value;
-    const items = {
+
+    const updatedCoffee = {
+      _id,
       name,
       chef,
       supplier,
@@ -21,7 +28,28 @@ const UpdateCoffee = () => {
       category,
       photoURL,
     };
-    console.log(items);
+    console.log(updatedCoffee);
+
+    // send data to the server
+    fetch(`http://localhost:5005/coffee/${_id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedCoffee),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            title: "Success!",
+            text: "Coffee Updated Successfully!",
+            icon: "success",
+            confirmButtonText: "Done!",
+          });
+        }
+      });
   };
   return (
     <div className="max-w-6xl mx-auto">
@@ -55,6 +83,7 @@ const UpdateCoffee = () => {
                 type="text"
                 name="name"
                 id="name"
+                defaultValue={name}
                 placeholder="Enter Coffee Name"
               />
             </div>
@@ -65,6 +94,7 @@ const UpdateCoffee = () => {
                 type="text"
                 name="chef"
                 id="chef"
+                defaultValue={chef}
                 placeholder="Enter Chef Name"
               />
             </div>
@@ -77,6 +107,7 @@ const UpdateCoffee = () => {
                 type="text"
                 name="supplier"
                 id="supplier"
+                defaultValue={supplier}
                 placeholder="Enter Coffee Supplier"
               />
             </div>
@@ -87,6 +118,7 @@ const UpdateCoffee = () => {
                 type="text"
                 name="taste"
                 id="taste"
+                defaultValue={taste}
                 placeholder="Enter Coffee Taste"
               />
             </div>
@@ -99,6 +131,7 @@ const UpdateCoffee = () => {
                 type="text"
                 name="category"
                 id="category"
+                defaultValue={category}
                 placeholder="Enter Coffee Category"
               />
             </div>
@@ -109,6 +142,7 @@ const UpdateCoffee = () => {
                 type="text"
                 name="details"
                 id="details"
+                defaultValue={details}
                 placeholder="Enter Coffee Details"
               />
             </div>
@@ -120,6 +154,7 @@ const UpdateCoffee = () => {
               type="url"
               name="url"
               id="url"
+              defaultValue={photoURL}
               placeholder="Enter photo URL"
             />
           </div>
