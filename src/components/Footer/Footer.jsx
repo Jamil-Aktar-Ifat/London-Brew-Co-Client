@@ -63,19 +63,19 @@ const Footer = () => {
               <input
                 type="text"
                 placeholder="Name"
-                className="border px-4  py-2"
+                className=" border border-[#E3B577]  input-warning px-4  py-2"
               />
               <input
                 type="text"
                 placeholder="Email"
-                className="border px-4 md:w-96 py-2"
+                className="border border-[#E3B577]  input-warning  px-4 md:w-96 py-2"
               />
               <textarea
                 placeholder="Message"
-                className=" px-4 py-2 pb-24 border w-full "
+                className=" px-4 py-2 pb-24 border border-[#E3B577]  input-warning  w-full "
               ></textarea>
               <input
-                className="w-32 border rounded-full py-2 bg-none hover:bg-[#E3B577] hover:text-black text-rancho text-lg"
+                className="w-32 border rounded-full py-2 bg-[#E3B577] hover:bg-transparent hover:shadow-xl text-rancho text-lg"
                 type="submit"
                 value="Send Message"
               />

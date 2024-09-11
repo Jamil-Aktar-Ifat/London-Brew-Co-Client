@@ -42,6 +42,7 @@ const AddCoffee = () => {
             icon: "success",
             confirmButtonText: "Done!",
           });
+          form.reset();
         }
       });
   };
@@ -142,6 +143,7 @@ const AddCoffee = () => {
               name="url"
               id="url"
               placeholder="Enter photo URL"
+              required
             />
           </div>
           <div className="border px-3 py-1 bg-[#E3B577] hover:text-black text-rancho text-lg text-center">
