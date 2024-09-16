@@ -20,7 +20,7 @@ const Home = () => {
         <div className="text-center mt-5 mb-8">
           <Link
             to="/addCoffee"
-            className="border px-3 py-1.5  bg-[#E3B577] hover:bg-transparent hover:shadow-xl text-rancho text-lg"
+            className="border px-3 py-1.5  bg-[#E3B577] hover:bg-transparent text-white hover:text-black hover:shadow-xl text-rancho text-lg"
           >
             Add Coffee
           </Link>

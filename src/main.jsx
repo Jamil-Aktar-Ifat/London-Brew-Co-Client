@@ -8,7 +8,9 @@ import AddCoffee from "./components/AddCoffee/AddCoffee.jsx";
 import Root from "./Root/Root.jsx";
 import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
 import AuthProvider from "./AuthProvider/AuthProvider.jsx";
-import SignUp from "./SignUp/SignUp.jsx";
+import SignUp from "./components/SignUp/SignUp.jsx";
+import Users from "./components/Users/Users.jsx";
+import SignIn from "./components/SignIn/SignIn.jsx";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +20,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5005/coffee"),
+        loader: () => fetch("https://london-brew-co-server.vercel.app/coffee"),
       },
       {
         path: "*",
@@ -28,7 +30,7 @@ const router = createBrowserRouter([
         path: "/updateCoffee/:id",
         element: <UpdateCoffee></UpdateCoffee>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5005/coffee/${params.id}`),
+          fetch(`https://london-brew-co-server.vercel.app/coffee/${params.id}`),
       },
       {
         path: "/AddCoffee",
@@ -37,6 +39,15 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/users",
+        element: <Users></Users>,
+        loader: () => fetch("https://london-brew-co-server.vercel.app/users"),
+      },
+      {
+        path: "/signin",
+        element: <SignIn></SignIn>,
       },
     ],
   },

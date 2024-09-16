@@ -1,26 +1,36 @@
 import { useContext } from "react";
-import { AuthContext } from "../AuthProvider/AuthProvider";
-import Swal from "sweetalert2";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
-const SignUp = () => {
-  const { createUser } = useContext(AuthContext);
+const SignIn = () => {
+  const { signInUser } = useContext(AuthContext);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
-    const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, name, password);
-    createUser(email, password)
+    console.log(email, password);
+
+    signInUser(email, password)
       .then((result) => {
-        console.log(result);
-        Swal.fire({
-          title: "Success!",
-          text: "Coffee Added Successfully!",
-          icon: "success",
-          confirmButtonText: "Done!",
-        });
-        form.reset();
+        console.log(result.user);
+        const user = {
+          email,
+          lastLoggedAt: result.user?.metadata?.lastSignInTime,
+        };
+        //update last logged at in the database
+        fetch("https://london-brew-co-server.vercel.app/users", {
+          method: "PATCH",
+          headers: {
+            "content-type": "application/json",
+          },
+
+          body: JSON.stringify(user),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+          });
       })
       .catch((error) => {
         console.log(error);
@@ -30,24 +40,10 @@ const SignUp = () => {
   return (
     <div className="max-w-md mx-auto mt-10 p-4 bg-gray-100 my-10">
       <h2 className="text-3xl font-bold mb-4 text-center text-rancho">
-        Sign Up
+        Sign In
       </h2>
 
       <form onSubmit={handleSubmit} className="text-raleway">
-        {/* Name */}
-        <div className="mb-4">
-          <label htmlFor="name" className="block mb-1 font-semibold">
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            className="w-full p-2 border border-[#E3B577]  input-warning"
-            placeholder="Enter your name"
-          />
-        </div>
-
         {/* Email */}
         <div className="mb-4">
           <label htmlFor="email" className="block mb-1 font-semibold">
@@ -59,6 +55,7 @@ const SignUp = () => {
             name="email"
             className="w-full p-2 border border-[#E3B577]  input-warning"
             placeholder="Enter your email"
+            required
           />
         </div>
 
@@ -73,6 +70,7 @@ const SignUp = () => {
             name="password"
             className="w-full p-2 border border-[#E3B577]  input-warning"
             placeholder="Enter your password"
+            required
           />
         </div>
 
@@ -81,11 +79,11 @@ const SignUp = () => {
           type="submit"
           className="w-full bg-[#E3B577]  input-warning text-white py-2 "
         >
-          Sign Up
+          Sign In
         </button>
       </form>
     </div>
   );
 };
 
-export default SignUp;
+export default SignIn;

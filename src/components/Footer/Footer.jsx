@@ -75,7 +75,8 @@ const Footer = () => {
                 className=" px-4 py-2 pb-24 border border-[#E3B577]  input-warning  w-full "
               ></textarea>
               <input
-                className="w-32 border rounded-full py-2 bg-[#E3B577] hover:bg-transparent hover:shadow-xl text-rancho text-lg"
+                className="w-32 border rounded-full py-2 bg-[#E3B577] hover:bg-transparent hover:shadow-xl
+                text-white hover:text-black text-rancho text-lg"
                 type="submit"
                 value="Send Message"
               />

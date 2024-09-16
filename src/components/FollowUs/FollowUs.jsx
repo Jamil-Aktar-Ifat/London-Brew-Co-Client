@@ -10,14 +10,14 @@ const FollowUs = () => {
       </div>
       {/* images section  */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
-        <img src="../../../public/images/cups/Rectangle-9.png" alt="" />
-        <img src="../../../public/images/cups/Rectangle-10.png" alt="" />
-        <img src="../../../public/images/cups/Rectangle-11.png" alt="" />
-        <img src="../../../public/images/cups/Rectangle-12.png" alt="" />
-        <img src="../../../public/images/cups/Rectangle-13.png" alt="" />
-        <img src="../../../public/images/cups/Rectangle-14.png" alt="" />
-        <img src="../../../public/images/cups/Rectangle-15.png" alt="" />
-        <img src="../../../public/images/cups/Rectangle-16.png" alt="" />
+        <img src="/images/cups/Rectangle-9.png" alt="Cup 1" />
+        <img src="/images/cups/Rectangle-10.png" alt="Cup 2" />
+        <img src="/images/cups/Rectangle-11.png" alt="Cup 3" />
+        <img src="/images/cups/Rectangle-12.png" alt="Cup 4" />
+        <img src="/images/cups/Rectangle-13.png" alt="Cup 5" />
+        <img src="/images/cups/Rectangle-14.png" alt="Cup 6" />
+        <img src="/images/cups/Rectangle-15.png" alt="Cup 7" />
+        <img src="/images/cups/Rectangle-16.png" alt="Cup 8" />
       </div>
     </div>
   );

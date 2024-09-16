@@ -25,7 +25,7 @@ const AddCoffee = () => {
     console.log(newCoffee);
 
     // send data to the server
-    fetch("http://localhost:5005/coffee", {
+    fetch("https://london-brew-co-server.vercel.app/coffee", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -73,7 +73,7 @@ const AddCoffee = () => {
             <div className="space-y-1">
               <h2 className="font-semibold">Name</h2>
               <input
-                className=" px-3 w-full md:w-[420px] py-2 text-sm"
+                className=" px-3 w-full md:w-[420px] py-2 text-sm border-[#E3B577]  input-warning "
                 type="text"
                 name="name"
                 id="name"
@@ -83,7 +83,7 @@ const AddCoffee = () => {
             <div className=" space-y-2 md:space-y-1">
               <h2 className="font-semibold">Chef</h2>
               <input
-                className=" px-3 w-full md:w-[420px] py-2 text-sm"
+                className=" px-3 w-full md:w-[420px] py-2 text-sm border-[#E3B577]  input-warning "
                 type="text"
                 name="chef"
                 id="chef"
@@ -91,11 +91,11 @@ const AddCoffee = () => {
               />
             </div>
           </div>
-          <div className="md:flex justify-between space-y-2 md:space-y-0">
+          <div className="md:flex justify-between space-y-2 md:space-y-0 border-[#E3B577]  input-warning ">
             <div className="space-y-1">
               <h2 className="font-semibold">Supplier</h2>
               <input
-                className=" px-3 w-full md:w-[420px] py-2 text-sm"
+                className=" px-3 w-full md:w-[420px] py-2 text-sm border-[#E3B577]  input-warning "
                 type="text"
                 name="supplier"
                 id="supplier"
@@ -105,7 +105,7 @@ const AddCoffee = () => {
             <div className="space-y-1">
               <h2 className="font-semibold">Taste</h2>
               <input
-                className=" px-3 w-full md:w-[420px] py-2 text-sm"
+                className=" px-3 w-full md:w-[420px] border-[#E3B577]  input-warning  py-2 text-sm"
                 type="text"
                 name="taste"
                 id="taste"
@@ -117,7 +117,7 @@ const AddCoffee = () => {
             <div className="space-y-1">
               <h2 className="font-semibold">Category</h2>
               <input
-                className=" px-3 w-full md:w-[420px] py-2 text-sm"
+                className=" px-3 w-full md:w-[420px] py-2 text-sm border-[#E3B577]  input-warning "
                 type="text"
                 name="category"
                 id="category"
@@ -127,7 +127,7 @@ const AddCoffee = () => {
             <div className="space-y-1">
               <h2 className="font-semibold">Details</h2>
               <input
-                className=" px-3 w-full md:w-[420px] py-2 text-sm"
+                className=" px-3 w-full md:w-[420px] py-2 text-sm border-[#E3B577]  input-warning "
                 type="text"
                 name="details"
                 id="details"
@@ -138,7 +138,7 @@ const AddCoffee = () => {
           <div className="space-y-1">
             <h2 className="font-semibold">Photo</h2>
             <input
-              className=" w-full px-3 py-2 text-sm"
+              className=" w-full px-3 py-2 text-sm border-[#E3B577]  input-warning "
               type="url"
               name="url"
               id="url"
