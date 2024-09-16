@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const SignIn = () => {
   const { signInUser } = useContext(AuthContext);
@@ -31,6 +32,13 @@ const SignIn = () => {
           .then((data) => {
             console.log(data);
           });
+        Swal.fire({
+          title: "Success!",
+          text: "Logged in Successfully!",
+          icon: "success",
+          confirmButtonText: "Done!",
+        });
+        form.reset();
       })
       .catch((error) => {
         console.log(error);

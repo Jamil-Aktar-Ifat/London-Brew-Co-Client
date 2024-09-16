@@ -1,6 +1,6 @@
 const FollowUs = () => {
   return (
-    <div className="my-20 max-w-6xl mx-auto">
+    <div className="my-20 max-w-6xl mx-auto px-3 md:px-0">
       {/* header title  */}
       <div className="text-center">
         <h1 className="text-raleway">Follow us now</h1>

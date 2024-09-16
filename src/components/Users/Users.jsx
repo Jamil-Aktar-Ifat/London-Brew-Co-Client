@@ -4,6 +4,8 @@ import Swal from "sweetalert2";
 
 const Users = () => {
   const loadedUsers = useLoaderData();
+  console.log(loadedUsers);
+
   const [users, setUsers] = useState(loadedUsers);
 
   const handleDelete = (id) => {
@@ -29,29 +31,6 @@ const Users = () => {
         setUsers(remainingUsers);
       }
     });
-
-    // Swal.fire({
-    //   title: "Are you sure?",
-    //   text: "You won't be able to revert this!",
-    //   icon: "warning",
-    //   showCancelButton: true,
-    //   confirmButtonColor: "#3085d6",
-    //   cancelButtonColor: "#d33",
-    //   confirmButtonText: "Yes, delete it!",
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     if (data.deletedCount > 0) {
-    //       Swal.fire({
-    //         title: "Deleted!",
-    //         text: "Your coffee has been deleted.",
-    //         icon: "success",
-    //       });
-    //       console.log("deleted successfully");
-    //       const remainingUsers = users.filter((user) => user._id !== id);
-    //       setUsers(remainingUsers);
-    //     }
-    //   });
   };
   return (
     <div>

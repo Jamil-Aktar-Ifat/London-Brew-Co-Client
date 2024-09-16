@@ -1,8 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
-import AddCoffee from "../components/AddCoffee/AddCoffee";
-
 const Root = () => {
   return (
     <div className="mx-auto">

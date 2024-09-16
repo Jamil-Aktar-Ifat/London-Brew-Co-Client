@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <div className="">
       <div
-        className=" py-20 "
+        className=" py-20 px-3 md:px-0 "
         style={{
           backgroundImage: "url(https://i.ibb.co/zZd6BGp/13.jpg)",
         }}

@@ -15,7 +15,8 @@ const SignUp = () => {
       .then((result) => {
         console.log(result);
         const createdAt = result.user?.metadata?.creationTime;
-        const user = { email, name, password, createdAt };
+        const lastLoggedAt = result.user?.metadata?.lastSignInTime;
+        const user = { email, name, password, createdAt, lastLoggedAt };
         fetch("https://london-brew-co-server.vercel.app/users", {
           method: "POST",
           headers: {
@@ -95,7 +96,7 @@ const SignUp = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full bg-[#E3B577]  input-warning text-white py-2 "
+          className="w-full bg-[#E3B577]  input-warning text-white hover:text-black py-2 "
         >
           Sign Up
         </button>
