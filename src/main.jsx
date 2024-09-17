@@ -22,10 +22,7 @@ const router = createBrowserRouter([
         element: <Home></Home>,
         loader: () => fetch("https://london-brew-co-server.vercel.app/coffee"),
       },
-      {
-        path: "*",
-        element: <ErrorPage></ErrorPage>,
-      },
+
       {
         path: "/updateCoffee/:id",
         element: <UpdateCoffee></UpdateCoffee>,
@@ -50,6 +47,10 @@ const router = createBrowserRouter([
         element: <SignIn></SignIn>,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <ErrorPage></ErrorPage>,
   },
 ]);
 

@@ -13,7 +13,7 @@ const ErrorPage = () => {
         </div>
       </Link>
       <div className="flex justify-center">
-        <img src="../../../public/images/404/404.gif" alt="" />
+        <img src="/images/404/404.gif" alt="" />
       </div>
     </div>
   );
