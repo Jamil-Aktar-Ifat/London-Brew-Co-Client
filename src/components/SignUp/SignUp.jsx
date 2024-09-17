@@ -38,6 +38,10 @@ const SignUp = () => {
       })
       .catch((error) => {
         console.log(error);
+        if (error) {
+          alert("The email is already in use!");
+        }
+        form.reset();
       });
   };
 
@@ -62,7 +66,6 @@ const SignUp = () => {
             required
           />
         </div>
-
         {/* Email */}
         <div className="mb-4">
           <label htmlFor="email" className="block mb-1 font-semibold">
@@ -77,7 +80,6 @@ const SignUp = () => {
             required
           />
         </div>
-
         {/* Password */}
         <div className="mb-4">
           <label htmlFor="password" className="block mb-1 font-semibold">
@@ -92,7 +94,6 @@ const SignUp = () => {
             required
           />
         </div>
-
         {/* Submit Button */}
         <button
           type="submit"
